@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Dashboard</title>
+
+<link rel="stylesheet" href="src/index.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+
+<div class="logo">
+<h1>Weather Forcast</h1>
+</div>
+
+<div class="search-box">
+
+<input type="text" id="cityInput" placeholder="Search city...">
+
+<button id="searchBtn">Search</button>
+
+<button id="locationBtn">current</button>
+
+</div>
+
+</header>
+
+
+<!-- CURRENT WEATHER -->
+
+<section id="currentWeather" class="current-weather">
+
+<div class="weather-info">
+
+<h2 id="cityName">---</h2>
+
+<p id="weatherDesc">---</p>
+
+<div class="temperature">
+
+<span id="currentTemp">--°</span>
+
+<img id="weatherIcon">
+
+</div>
+
+</div>
+
+
+<div class="weather-details">
+
+<div class="card">
+<h3>Humidity</h3>
+<p id="humidity">--%</p>
+</div>
+
+<div class="card">
+<h3>Wind Speed</h3>
+<p id="windSpeed">-- m/s</p>
+</div>
+
+<div class="card">
+<h3>Current temp</h3>
+<p id="currentTemp">--°</p>
+<p id="windSpeed">-- m/s</p>
+</div>
+
+<div class="card">
+<h3>weatherDec</h3>
+<p id="weatherDesc">---</p>
+<p id="humidity">--%</p>
+</div>
+
+</div>
+</section>
+
+
+<!-- FORECAST -->
+
+<section class="forecast">
+
+<h3>Weekly Forecast</h3>
+
+<div id="forecastGrid" class="forecast-grid"></div>
+
+</section>
+
+
+<!-- LOADING -->
+
+<div id="loadingState" class="loading hidden">
+<p>Loading weather...</p>
+</div>
+
+
+<!-- ERROR -->
+
+<div id="errorState" class="error hidden">
+
+<h2>Oops!</h2>
+
+<p id="errorMessage"></p>
+
+</div>
+
+
+</div>
+
+<script src="src/script.js"></script>
+
+</body>
+</html>

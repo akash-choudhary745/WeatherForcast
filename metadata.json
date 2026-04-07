@@ -1,0 +1,5 @@
+{
+  "name": "SkyCast Weather Dashboard",
+  "description": "A comprehensive weather dashboard providing real-time city weather data and weekly forecasts with a clean, responsive interface.",
+  "requestFramePermissions": ["geolocation"]
+}
