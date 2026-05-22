@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather Dashboard</title>
+
+<title>Advanced Weather Dashboard</title>
 
 <link rel="stylesheet" href="index.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
@@ -14,10 +20,12 @@
 
 <div class="container">
 
+<!-- HEADER -->
+
 <header class="header">
 
 <div class="logo">
-<h1>Weather Forcast</h1>
+<h1>🌦 Weather Forecast</h1>
 </div>
 
 <div class="search-box">
@@ -26,7 +34,21 @@
 
 <button id="searchBtn">Search</button>
 
-<button id="locationBtn">current</button>
+<button id="locationBtn">📍 Current</button>
+
+<button id="voiceBtn">🎤</button>
+
+<button id="themeBtn">🌙</button>
+
+<button id="saveCity">⭐</button>
+
+<select id="langSelect">
+
+<option value="en">English</option>
+
+<option value="hi">Hindi</option>
+
+</select>
 
 </div>
 
@@ -47,12 +69,22 @@
 
 <span id="currentTemp">--°</span>
 
-<img id="weatherIcon">
+<img id="weatherIcon" alt="weather icon">
+
+</div>
+
+<div class="weather-extra">
+
+<p>Feels Like: <span id="feelsLike">--°</span></p>
+
+<p>UV Index: <span id="uvIndex">--</span></p>
 
 </div>
 
 </div>
 
+
+<!-- WEATHER DETAILS -->
 
 <div class="weather-details">
 
@@ -66,18 +98,148 @@
 <p id="windSpeed">-- m/s</p>
 </div>
 
+<div class="card">
+<h3>Pressure</h3>
+<p id="pressure">-- hPa</p>
+</div>
+
+<div class="card">
+<h3>Visibility</h3>
+<p id="visibility">-- km</p>
+</div>
+
+<div class="card">
+<h3>Wind Direction</h3>
+<p id="windDirection">--</p>
+</div>
+
+<div class="card">
+<h3>Air Quality</h3>
+<p id="aqi">--</p>
+</div>
 
 </div>
+
 </section>
 
 
-<!-- FORECAST -->
+<!-- EXTRA DETAILS -->
+
+<section class="extra-section">
+
+<div class="extra-card">
+<h3>🌅 Sunrise</h3>
+<p id="sunrise">--</p>
+</div>
+
+<div class="extra-card">
+<h3>🌇 Sunset</h3>
+<p id="sunset">--</p>
+</div>
+
+<div class="extra-card">
+<h3>☀ UV Index</h3>
+<p id="uvCard">--</p>
+</div>
+
+<div class="extra-card">
+<h3>🌡 Feels Like</h3>
+<p id="feelsCard">--°</p>
+</div>
+
+</section>
+
+
+<!-- AI RECOMMENDATION -->
+
+<section class="ai-section">
+
+<div class="ai-box">
+
+<h3>🤖 AI Recommendation</h3>
+
+<p id="aiTip">
+
+Loading recommendations...
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- HOURLY FORECAST -->
+
+<section class="hourly">
+
+<h3>⏰ Hourly Forecast</h3>
+
+<div id="hourlyContainer" class="hourly-grid"></div>
+
+</section>
+
+
+<!-- WEEKLY FORECAST -->
 
 <section class="forecast">
 
-<h3>Weekly Forecast</h3>
+<h3>📅 Weekly Forecast</h3>
 
 <div id="forecastGrid" class="forecast-grid"></div>
+
+</section>
+
+
+<!-- WEATHER CHART -->
+
+<section class="chart-section">
+
+<h3>📈 Temperature Trend</h3>
+
+<canvas id="tempChart"></canvas>
+
+</section>
+
+
+<!-- FAVORITE CITIES -->
+
+<section class="favorites">
+
+<h3>⭐ Favorite Cities</h3>
+
+<div id="favoriteCities" class="favorite-grid"></div>
+
+</section>
+
+
+<!-- WEATHER ALERT -->
+
+<section class="alert-section">
+
+<div id="weatherAlert" class="alert-box hidden">
+
+⚠ No alerts currently
+
+</div>
+
+</section>
+
+
+<!-- WEATHER NEWS -->
+
+<section class="news-section">
+
+<h3>📰 Weather News</h3>
+
+<div class="news-card">
+
+<p>
+Heavy rain and climate changes continue to impact weather conditions globally.
+Stay updated with local forecasts and alerts.
+</p>
+
+</div>
 
 </section>
 
@@ -85,7 +247,11 @@
 <!-- LOADING -->
 
 <div id="loadingState" class="loading hidden">
+
+<div class="loader"></div>
+
 <p>Loading weather...</p>
+
 </div>
 
 
@@ -100,9 +266,25 @@
 </div>
 
 
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<p>
+
+Made with ❤️ using OpenWeather API
+
+</p>
+
+</footer>
+
 </div>
+
+
+<!-- SCRIPT -->
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
